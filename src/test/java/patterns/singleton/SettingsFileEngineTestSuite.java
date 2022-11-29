@@ -1,9 +1,9 @@
 package patterns.singleton;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +29,7 @@ public class SettingsFileEngineTestSuite {
        String fileName = settingsFileEngine.getFileName();
        System.out.println("Opened: " + fileName);
        //Then
-       assertEquals("myapp.settings", fileName);
+       Assertions.assertEquals("myapp.settings", fileName);
     }
  
     @Test
@@ -38,7 +38,7 @@ public class SettingsFileEngineTestSuite {
        //When
        boolean result = settingsFileEngine.loadSettings();
        //Then
-       assertTrue(result);
+       Assertions.assertTrue(result);
     }
  
     @Test
@@ -47,7 +47,7 @@ public class SettingsFileEngineTestSuite {
        //When
        boolean result = settingsFileEngine.saveSettings();
        //Then
-       assertTrue(result);
+       Assertions.assertTrue(result);
     }
  
 }
